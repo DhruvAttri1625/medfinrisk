@@ -12,6 +12,10 @@ import { fmt, fmtL } from '../utils/formatters';
  * Route: /dashboard  (receives state from DiagnosisForm via navigate)
  * Props:  t {object}  translations
  */
+
+const token = localStorage.getItem("token");
+
+if (!token) navigate('/login');
 export default function Dashboard({ t }) {
   const location = useLocation();
   const navigate = useNavigate();
