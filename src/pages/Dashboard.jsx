@@ -24,7 +24,7 @@ export default function Dashboard({ t }) {
     return null;
   }
 
-  const { hospital: h, treatment, treatmentCost, totalCost, outOfPocket, disposable, months, score, toxicity, emi } = result;
+  const { hospital: h, treatment, totalCost, outOfPocket, disposable, months, score, toxicity, emi } = result;
 
   const isLow  = score < 35;
   const isMed  = score >= 35 && score < 65;

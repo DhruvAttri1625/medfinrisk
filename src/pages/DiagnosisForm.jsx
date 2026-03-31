@@ -2,7 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { useParams, useSearchParams, useNavigate } from 'react-router-dom';
 import { DB, TREATMENTS } from '../data/hospitals';
 import { INSURERS } from '../data/constants';
-import { fmt, fmtL, calcRiskScore } from '../utils/formatters';
+import { fmtL, calcRiskScore } from '../utils/formatters';
 
 const EMPTY_FORM = {
   income: '', emi: '', expenses: '', dependents: '0',
@@ -54,7 +54,7 @@ export default function DiagnosisForm({ t }) {
     });
 
     const emi = Math.round(outOfPocket / Math.max(months, 1));
-    await fetch('http://localhost:5000/api/search/save', {
+    await fetch('https://medfinrisk-backend.onrender.com/api/search/save', {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json'

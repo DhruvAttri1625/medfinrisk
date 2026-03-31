@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams, useSearchParams, useNavigate } from 'react-router-dom';
-import { DB, TREATMENTS } from '../data/hospitals';
+import { DB } from '../data/hospitals';
 import { fmtL } from '../utils/formatters';
 
 /**
