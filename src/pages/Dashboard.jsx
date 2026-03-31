@@ -15,6 +15,20 @@ import { fmt, fmtL } from '../utils/formatters';
  */
 
 const token = localStorage.getItem("token");
+export default function DiagnosisForm() {
+
+  const navigate = useNavigate(); 
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+
+    if (!token) {
+      navigate('/login');
+    }
+  }, []);
+
+  // rest of your code...
+}
 
 if (!token) navigate('/login');
 export default function Dashboard({ t }) {
