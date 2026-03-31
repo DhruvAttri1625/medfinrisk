@@ -3,6 +3,8 @@ import { useParams, useSearchParams, useNavigate } from 'react-router-dom';
 import { DB, TREATMENTS } from '../data/hospitals';
 import { INSURERS } from '../data/constants';
 import { fmtL, calcRiskScore } from '../utils/formatters';
+import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 
 const EMPTY_FORM = {
   income: '', emi: '', expenses: '', dependents: '0',
@@ -14,6 +16,16 @@ const EMPTY_FORM = {
  * Route: /hospital/:id/diagnose?treatment=...
  * Props:  t {object}  translations
  */
+const navigate = useNavigate();
+
+useEffect(() => {
+  const token = localStorage.getItem("token");
+
+  if (!token) {
+    navigate('/login');
+  }
+}, []);
+
 export default function DiagnosisForm({ t }) {
   const { id }     = useParams();
   const [params]   = useSearchParams();

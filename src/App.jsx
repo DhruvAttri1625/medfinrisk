@@ -6,8 +6,11 @@ import SearchPage     from './pages/SearchPage';
 import ResultsList    from './pages/ResultsList';
 import HospitalDetail from './pages/HospitalDetail';
 import DiagnosisForm  from './pages/DiagnosisForm';
+import Login from './pages/Login';
+import Signup from './pages/signup';
 import Dashboard      from './pages/Dashboard';
 import { TRANSLATIONS } from './data/constants';
+
 
 // ── Scroll to top on every navigation ────────────────────────
 function ScrollToTop() {
@@ -29,6 +32,8 @@ function AppInner() {
       <ScrollToTop />
       <Navbar lang={lang} setLang={setLang} t={t} showBack={!isHome} />
       <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
         <Route path="/"                          element={<HomePage       t={t} />} />
         <Route path="/search/:mode"              element={<SearchPage     t={t} />} />
         <Route path="/results"                   element={<ResultsList    t={t} />} />
