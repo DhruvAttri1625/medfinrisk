@@ -3,7 +3,6 @@ import { useParams, useSearchParams, useNavigate } from 'react-router-dom';
 import { DB, TREATMENTS } from '../data/hospitals';
 import { INSURERS } from '../data/constants';
 import { fmtL, calcRiskScore } from '../utils/formatters';
-import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 
 const EMPTY_FORM = {

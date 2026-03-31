@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import RadialGauge from '../components/RadialGauge';
